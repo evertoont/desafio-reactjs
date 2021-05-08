@@ -11,10 +11,11 @@
     font-size: 2.5rem;
     font-style: italic;
     color: #3b4252;
-    font-weight: 100;
+    font-weight: 300;
   }
 
   form {
+    display: flex;
     input {
       color: #3b4252;
       width: 400px;

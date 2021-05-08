@@ -5,7 +5,7 @@ import styles from "./home.module.scss";
 
 export default function Home() {
   const history = useHistory();
-  const [username, setUsername] = useState();
+  const [username, setUsername] = useState("");
 
   function handleSearch() {
     history.push(`/profile/${username}`);
