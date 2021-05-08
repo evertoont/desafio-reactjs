@@ -3,12 +3,23 @@ import { useHistory } from "react-router";
 import { BsSearch } from "react-icons/bs";
 import styles from "./home.module.scss";
 
+import api from "../../services/api";
+
 export default function Home() {
   const history = useHistory();
   const [username, setUsername] = useState("");
+  const [erroMessage, setErroMessage] = useState("");
 
-  function handleSearch() {
-    history.push(`/profile/${username}`);
+  function handleSearch(event) {
+    event.preventDefault();
+    api
+      .get(`users/${username}`)
+      .then(() => {
+        history.push(`/profile/${username}`);
+      })
+      .catch(() => {
+        setErroMessage("User not found!");
+      });
   }
 
   return (
@@ -25,6 +36,9 @@ export default function Home() {
           <BsSearch className={styles.icon} /> Buscar
         </button>
       </form>
+      {erroMessage && (
+        <span className={styles.errorMessage}>{erroMessage}</span>
+      )}
     </section>
   );
 }

@@ -25,13 +25,18 @@
       align-items: center;
       justify-content: center;
       padding-top: 1rem;
-      font-size: 1rem;
+      font-size: 1.25rem;
       color: #3b4252;
+
+      svg{
+        font-size: 20px;
+      }
     }
   }
 
   hr {
     border: 1px solid #eceff4;
     margin-top: 12px;
+    width: 950px;
   }
 }

@@ -16,12 +16,12 @@ export default function CardRepo() {
       </p>
       <div className={styles.info_repo}>
         <span>
-          <HiOutlineStar /> 100 stars{" "}
+          <HiOutlineStar /> 100 stars
         </span>
         <span>
           <BsDot />
         </span>
-        <span>Updadted 30days</span>
+        <span>Update 30 days</span>
       </div>
       <hr/>
     </div>
