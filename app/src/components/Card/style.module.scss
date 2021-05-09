@@ -1,9 +1,9 @@
 .container {
-  padding: 1rem;
+  padding: 0.8rem;
   padding-left: 4rem;
 
   a {
-    font-size: 24px;
+    font-size: 18px;
     font-style: italic;
     line-height: 34px;
   }
@@ -13,7 +13,7 @@
   }
   p {
     color: #3b4252;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 28px;
   }
 
@@ -25,7 +25,7 @@
       align-items: center;
       justify-content: center;
       padding-top: 1rem;
-      font-size: 1.25rem;
+      font-size: 1rem;
       color: #3b4252;
 
       svg{
@@ -37,6 +37,5 @@
   hr {
     border: 1px solid #eceff4;
     margin-top: 12px;
-    width: 950px;
   }
 }

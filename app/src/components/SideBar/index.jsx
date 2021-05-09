@@ -1,6 +1,5 @@
 import React from "react";
 import { useHistory } from "react-router";
-import styles from "./style.module.scss";
 import { AiOutlineMail, AiOutlineHeart, AiOutlineStar } from "react-icons/ai";
 import { FiTwitter, FiLink } from "react-icons/fi";
 import {
@@ -8,70 +7,80 @@ import {
   HiOutlineLocationMarker,
   HiOutlineOfficeBuilding,
 } from "react-icons/hi";
+import styles from "./style.module.scss";
+import notfound from "../../assets/user_notfound.png";
 
-export default function SideBar() {
+export default function SideBar(data) {
   const history = useHistory();
+
+  console.log(data);
 
   return (
     <div className={styles.sideBar}>
       <div className={styles.user_image}>
-        <img
-          src="https://avatars.githubusercontent.com/u/55769021?v=4"
-          alt="avatar user"
-        />
+        <img src={data.avatar_url || notfound} alt="avatar user" />
       </div>
       <div className={styles.content_description}>
-        <h1>Everton Oliver</h1>
+        <h1>{data.name}</h1>
         <h2>
-          <a href="https://github.com/evertoont">@evertoont</a>
+          <a
+            href={`https://github.com/${data.login}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @{data.login}
+          </a>
         </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt
-          congue ligula in rutrum. Morbi nec lacus condimentum, hendrerit mi eu,
-          feugiat.
-        </p>
+        <p>{data.bio}</p>
         <div className={styles.user_status}>
           <span>
-            <HiOutlineUserGroup /> 10 Followers
+            <HiOutlineUserGroup /> {data.followers} Followers
           </span>
           <span>
-            <AiOutlineHeart /> 10 Following
+            <AiOutlineHeart /> {data.following} Following
           </span>
           <span>
-            <AiOutlineStar /> 10 Stars
+            <AiOutlineStar /> {data.amountStar} {data.amountStar >= 30 ? "+ Stars" : "Stars"}
           </span>
         </div>
         <div className={styles.user_info}>
           <ul>
-            <li>
-              <HiOutlineOfficeBuilding /> Organization
-            </li>
-            <li>
-              <HiOutlineLocationMarker /> Location
-            </li>
-            <li>
-              <AiOutlineMail /> Email
-            </li>
-            <li>
-              <FiLink />
-              <a
-                href="http://www.meusite.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                www.meusite.com
-              </a>
-            </li>
-            <li>
-              <FiTwitter />
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @twitter
-              </a>
-            </li>
+            {data.company && (
+              <li>
+                <HiOutlineOfficeBuilding /> {data.company}
+              </li>
+            )}
+
+            {data.location && (
+              <li>
+                <HiOutlineLocationMarker /> {data.location}
+              </li>
+            )}
+            {data.email && (
+              <li>
+                <AiOutlineMail /> {data.email}
+              </li>
+            )}
+            {data.blog && (
+              <li>
+                <FiLink />
+                <a href={data.blog} target="_blank" rel="noopener noreferrer">
+                  {data.blog}
+                </a>
+              </li>
+            )}
+            {data.twitter_username && (
+              <li>
+                <FiTwitter />
+                <a
+                  href={`https://twitter.com/${data.twitter_username}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  @{data.twitter_username}
+                </a>
+              </li>
+            )}
           </ul>
         </div>
         <div className={styles.go_back}>

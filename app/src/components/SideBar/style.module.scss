@@ -11,8 +11,8 @@
 
     img {
       display: flex;
-      width: 15rem;
-      height: 15rem;
+      width: 14rem;
+      height: 14rem;
       border: 2px solid #c0ccda;
     }
   }
@@ -25,11 +25,11 @@
     h1 {
       margin-top: 33px;
       font-weight: 300;
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: #eceff4;
     }
     h2 {
-      color: rgba(236, 239, 244, 0.6);
+      color: rgba(236, 239, 244, 0.7);
       font-size: 1.5rem;
       font-weight: 300;
     }
@@ -50,7 +50,7 @@
         display: flex;
         align-items: center;
         color: #eceff4;
-        font-size: 1.25rem;
+        font-size: 1.2rem;
       }
     }
 
@@ -65,7 +65,7 @@
           display: flex;
           align-items: center;
           color: rgba(236, 239, 244, 0.7);
-          font-size: 1.5rem;
+          font-size: 1.3rem;
           margin-top: 17px;
         }
       }
