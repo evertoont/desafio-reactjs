@@ -31,6 +31,7 @@ export default function Home() {
           placeholder="Type the username here..."
           value={username}
           onChange={(event) => setUsername(event.target.value)}
+          autofocus="true"
         />
         <button onClick={handleSearch}>
           <BsSearch className={styles.icon} /> Buscar

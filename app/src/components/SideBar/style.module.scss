@@ -100,6 +100,10 @@
         margin-top: 0;
       }
 
+      @media (max-width: 770px) {
+        margin-top: 1.5rem;
+      }
+
       ul {
         list-style: none;
         li {

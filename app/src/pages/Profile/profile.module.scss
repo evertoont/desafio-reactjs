@@ -17,5 +17,17 @@
       width: 100vw;
       height: 100vh;
     }
+
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #ffffff; 
+    }
+     
+    &::-webkit-scrollbar-thumb {
+      background: #3B4252; 
+    }
   }
 }

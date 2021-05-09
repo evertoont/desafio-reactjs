@@ -13,8 +13,6 @@ import notfound from "../../assets/user_notfound.png";
 export default function SideBar(data) {
   const history = useHistory();
 
-  console.log(data);
-
   return (
     <div className={styles.sideBar}>
       <div className={styles.user_image}>
