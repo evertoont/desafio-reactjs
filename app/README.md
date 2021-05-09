@@ -43,5 +43,5 @@ $ npm start ou yarn start
 Este projeto está sob a [MIT License](../LICENSE)
 
 <p align="center">
-Made with 💜 by  <a href="https://www.linkedin.com/in/evertoont/" target="_blank">Everton Reis</a>
+Made with 💜 by  <a href="https://www.linkedin.com/in/evertoont/">Everton Reis</a>
 </p>
