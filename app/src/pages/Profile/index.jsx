@@ -47,7 +47,7 @@ export default function Profile() {
 
     api.get(`/users/${username}/repos`).then(({ data }) => {
       const dataCards = [];
-      data.map((repos) => {
+      data.forEach((repos) => {
         dataCards.push({
           html_url: repos.html_url,
           description: repos.description,
