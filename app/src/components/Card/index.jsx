@@ -2,10 +2,11 @@ import React from "react";
 import { HiOutlineStar } from "react-icons/hi";
 import { BsDot } from "react-icons/bs";
 import styles from "./style.module.scss";
+import moment from 'moment'
 
 export default function CardRepo({data}) {
 
-  const descriptionDefault = "No description, website, or topics provided"
+  const descriptionDefault = "No description"
 
   return (
     <div className={styles.container}>
@@ -22,7 +23,7 @@ export default function CardRepo({data}) {
         <span>
           <BsDot />
         </span>
-        <span>{data.updated_at}</span>
+        <span>{moment(data.updated_at).fromNow()}</span>
       </div>
       <hr/>
     </div>
