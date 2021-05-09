@@ -2,6 +2,10 @@
   padding: 0.8rem;
   padding-left: 4rem;
 
+  @media (max-width: 770px) {
+    padding: 0.8rem;
+  }
+
   a {
     font-size: 18px;
     font-style: italic;
@@ -15,6 +19,10 @@
     color: #3b4252;
     font-size: 16px;
     line-height: 28px;
+
+    @media (max-width: 770px) {
+      font-size: 1.1rem;
+    }
   }
 
   .info_repo {
@@ -28,7 +36,7 @@
       font-size: 1rem;
       color: #3b4252;
 
-      svg{
+      svg {
         font-size: 20px;
       }
     }

@@ -49,6 +49,7 @@ export default function Profile() {
       const dataCards = [];
       data.forEach((repos) => {
         dataCards.push({
+          id: repos.id,
           html_url: repos.html_url,
           description: repos.description,
           name: repos.name,
