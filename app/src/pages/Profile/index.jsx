@@ -69,8 +69,7 @@ export default function Profile() {
       <SideBar {...dataProfile} />
 
       <div className={styles.repository}>
-        {dataRepository &&
-          dataRepository.map((data) => <CardRepo key={data.id} data={data} />)}
+          {dataRepository.map((data) => <CardRepo key={data.id} data={data} />)}
       </div>
     </div>
   );
