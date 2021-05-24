@@ -62,11 +62,11 @@ export default function Profile() {
     });
   }, [username]);
 
-  Object.assign(dataProfile, { amountStar });
+  const newDataProfile = Object.assign(dataProfile, { amountStar });
 
   return (
     <div className={styles.container}>
-      <SideBar {...dataProfile} />
+      <SideBar {...newDataProfile} />
 
       <div className={styles.repository}>
           {dataRepository.map((data) => <CardRepo key={data.id} data={data} />)}
