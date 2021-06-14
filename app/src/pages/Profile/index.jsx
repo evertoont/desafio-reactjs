@@ -3,6 +3,8 @@ import { useParams } from "react-router";
 import styles from "./profile.module.scss";
 import CardRepo from "../../components/Card";
 import SideBar from "../../components/SideBar";
+import ResponsiveMenu from "../../components/ResponsiveMenu";
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 import api from "../../services/api";
 
@@ -12,6 +14,7 @@ export default function Profile() {
   const [dataRepository, setDataRepository] = useState([]);
   const [amountStar, setAmountStar] = useState(0);
   const [errorRepository, setErrorRepository] = useState("");
+  const { width } = useWindowDimensions();
 
   function starOrdenation(fristPosition, secondPosition) {
     if (fristPosition.stargazers_count < secondPosition.stargazers_count)
@@ -71,7 +74,7 @@ export default function Profile() {
 
   return (
     <div className={styles.container}>
-      <SideBar {...newDataProfile} />
+      {width<=415 ? <ResponsiveMenu {...newDataProfile} /> : <SideBar {...newDataProfile} />}
 
       <div className={styles.repository}>
         {errorRepository ? (
