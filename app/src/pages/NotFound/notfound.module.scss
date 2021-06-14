@@ -1,0 +1,43 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    color: #3b4252;
+    font-size: 2.5rem;
+  }
+
+  p {
+    color: #3b4252;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+
+  .go_back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    button {
+      background-color: #3b4252;
+      color: #eceff4;
+      text-align: center;
+      font-size: 1.12rem;
+      border-radius: 5px;
+      width: 12rem;
+      height: 3.12rem;
+      border: none;
+      cursor: pointer;
+
+      @media (max-width: 414px) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
