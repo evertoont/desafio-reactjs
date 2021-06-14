@@ -11,6 +11,7 @@ export default function Profile() {
   const [dataProfile, setDataProfile] = useState([]);
   const [dataRepository, setDataRepository] = useState([]);
   const [amountStar, setAmountStar] = useState(0);
+  const [errorRepository, setErrorRepository] = useState("");
 
   function starOrdenation(fristPosition, secondPosition) {
     if (fristPosition.stargazers_count < secondPosition.stargazers_count)
@@ -46,19 +47,23 @@ export default function Profile() {
     });
 
     api.get(`/users/${username}/repos`).then(({ data }) => {
-      const dataCards = [];
-      data.forEach((repos) => {
-        dataCards.push({
-          id: repos.id,
-          html_url: repos.html_url,
-          description: repos.description,
-          name: repos.name,
-          updated_at: repos.updated_at,
-          stargazers_count: repos.stargazers_count,
+      if (data.length > 0) {
+        const dataCards = [];
+        data.forEach((repos) => {
+          dataCards.push({
+            id: repos.id,
+            html_url: repos.html_url,
+            description: repos.description,
+            name: repos.name,
+            updated_at: repos.updated_at,
+            stargazers_count: repos.stargazers_count,
+          });
         });
-      });
 
-      setDataRepository([...dataCards].sort(starOrdenation).reverse());
+        setDataRepository([...dataCards].sort(starOrdenation).reverse());
+      } else {
+        setErrorRepository("User has no public repository.");
+      }
     });
   }, [username]);
 
@@ -69,7 +74,11 @@ export default function Profile() {
       <SideBar {...newDataProfile} />
 
       <div className={styles.repository}>
-          {dataRepository.map((data) => <CardRepo key={data.id} data={data} />)}
+        {errorRepository ? (
+          <p className={styles.errorRepository}>{errorRepository}</p>
+        ) : (
+          dataRepository.map((data) => <CardRepo key={data.id} data={data} />)
+        )}
       </div>
     </div>
   );

@@ -13,6 +13,12 @@
     background-color: #fafafa;
     overflow: auto;
 
+    .errorRepository{
+      color: #3b4252;
+      font-size: 1.2rem;
+      margin: 10px;
+    }
+
     @media (max-width: 414px) {
       width: 100vw;
       height: 100vh;
