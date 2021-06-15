@@ -13,7 +13,6 @@ import {
   HiOutlineOfficeBuilding,
 } from "react-icons/hi";
 import styles from "./style.module.scss";
-import notfound from "../../assets/user_notfound.png";
 
 export default function ResponsiveMenu(data) {
   const history = useHistory();
@@ -44,7 +43,7 @@ export default function ResponsiveMenu(data) {
             <AiOutlineClose />
           </span>
           <div className={styles.user_image}>
-            <img src={data.avatar_url || notfound} alt="avatar user" />
+            <img src={data.avatar_url} alt="avatar user" />
           </div>
           <div className={styles.content_description}>
             <h1>{data.name}</h1>

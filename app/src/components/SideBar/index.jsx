@@ -8,7 +8,6 @@ import {
   HiOutlineOfficeBuilding,
 } from "react-icons/hi";
 import styles from "./style.module.scss";
-import notfound from "../../assets/user_notfound.png";
 
 export default function SideBar(data) {
   const history = useHistory();
@@ -16,7 +15,7 @@ export default function SideBar(data) {
   return (
     <div className={styles.sideBar}>
       <div className={styles.user_image}>
-        <img src={data.avatar_url || notfound} alt="avatar user" />
+        <img src={data.avatar_url} alt="avatar user" />
       </div>
       <div className={styles.content_description}>
         <h1>{data.name}</h1>
