@@ -15,7 +15,7 @@ export default function SideBar(data) {
   return (
     <div className={styles.sideBar}>
       <div className={styles.user_image}>
-        <img src={data.avatar_url} alt="avatar user" />
+        <img src={data.avatar_url || "/assets/userNotFound.png"} alt="avatar user" />
       </div>
       <div className={styles.content_description}>
         <h1>{data.name}</h1>

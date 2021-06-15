@@ -20,7 +20,7 @@ export const getUserData = async (username) => {
   } catch (error) {
     let userData = {
       login: "error",
-      avatar_url: "/assets/user_notfound.png",
+      avatar_url: "/assets/userNotFound.png",
       name: "Something went wrong!",
       bio: "Couldn't find user data. Try again later.",
       followers: 0,
