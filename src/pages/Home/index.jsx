@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { BsSearch } from "react-icons/bs";
 import styles from "./home.module.scss";
+import GithubCorner from "react-github-corner";
 
 import { getUserData } from "../../services/UserService";
 
@@ -14,8 +15,7 @@ export default function Home() {
     try {
       const { login } = await getUserData(username);
 
-      if (username === "" || login === "error")
-        throw Error;
+      if (username === "" || login === "error") throw Error;
 
       history.push(`/profile/${username}`);
     } catch (error) {
@@ -46,6 +46,14 @@ export default function Home() {
       {erroMessage && (
         <span className={styles.errorMessage}>{erroMessage}</span>
       )}
+
+      <GithubCorner
+        href="https://github.com/evertoont/desafio-reactjs"
+        bannerColor="#151513"
+        octoColor="#fff"
+        size={80}
+        direction="right"
+      />
     </section>
   );
 }
