@@ -44,11 +44,13 @@ export default function Profile() {
 
   return (
     <div className={styles.container}>
-      {width <= 415 ? (
-        <ResponsiveMenu {...dataProfile} />
-      ) : (
-        <SideBar {...dataProfile} />
-      )}
+      <div className={styles.sidebar}>
+        {width <= 415 ? (
+          <ResponsiveMenu {...dataProfile} />
+        ) : (
+          <SideBar {...dataProfile} />
+        )}
+      </div>
 
       <div className={styles.repository}>
         {errorRepository ? (

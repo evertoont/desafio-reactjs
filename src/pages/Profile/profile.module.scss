@@ -7,7 +7,16 @@
     flex-direction: column;
   }
 
+  .sidebar{
+    flex: 5;
+
+    @media (max-width: 770px) {
+      flex: 8;
+    }
+  }
+
   .repository {
+    flex: 15;
     width: 85%;
     max-height: 100vh;
     background-color: #fafafa;
