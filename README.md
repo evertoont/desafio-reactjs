@@ -45,8 +45,10 @@ Este projeto Tem como objetivo a realização do [desafio](https://github.com/de
 ```bash
 # Clone este repositório e acesse sua pasta
 $ git clone https://github.com/evertoont/desafio-reactjs && cd desafio-reactjs
+
 # Instale as dependências
 $ yarn install
+
 # Iniciie a aplicação
 $ yarn start
 ```
